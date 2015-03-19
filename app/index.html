@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SA Flickr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/app.css">
+
+</head>
+<body ng-app="SaFlickr">
+  <div class="container">
+    <ul class="row list-unstyled" ng-controller="FlickrListController">
+      <li class="col-sm-1 col-md-4 col-lg-3" ng-repeat="photo in photos">
+        <saf-photo photo-title="photo.title" photo-url="photo.media.m"></saf-photo>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- TODO to be concatenated & minified -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+  <script src="scripts/vendors/angular-local-storage/dist/angular-local-storage.min.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/filters/numbers-only.js"></script>
+  <script src="scripts/services/flickr.js"></script>
+  <script src="scripts/controller/flickr-list-controller.js"></script>
+  <script src="scripts/directives/saf-photo.js"></script>
+</body>
+</html>
